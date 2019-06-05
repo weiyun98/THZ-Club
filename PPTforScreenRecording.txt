@@ -1,0 +1,9 @@
+This is a tutorial for screen recording by powerpoint:
+1.open powerpoint(ppt).
+2.if you don't have ppt, please install it from internet.
+3.choose "insert" and "Screen Recording"
+4.and then you can choose the area where you want to recording
+5.if you enter "win + shift + f", you can recording full screen fast
+6.click a square to stop the recording and media now is on the center of PPT
+7.right click and choose save media, you can save the media
+Thanks for watching.
