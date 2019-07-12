@@ -1,0 +1,4 @@
+#!bin/bash
+g++ Token.cpp token_parser.cpp -o a.out
+./a.out
+rm a.out
