@@ -1,0 +1,8 @@
+this is a project for kk language
+
+first destination:
+  achieve a arithmetic contian:
+    1.+ - * / ( )  for integer
+    2.generate a tree
+    3.binaryOPNode left, OP, right
+    4.constValue type, value
