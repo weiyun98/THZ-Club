@@ -1,0 +1,4 @@
+#!bin/bash
+g++ token_parser/Token.cpp kk.cpp node_generate/Node.cpp -o a.out -I token_parser/ -I node_generate/
+./a.out
+rm a.out

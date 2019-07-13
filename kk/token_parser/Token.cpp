@@ -37,8 +37,33 @@ void Tokenizer::SkipWhiteSpace() {
 
 Token Tokenizer::NextToken() {
   ++pos;
-  if (myStream[pos] > '0' && myStream[pos] < '9') {
-    return Token(TOKENTYPE::Integer, &myStream, pos, 1);
+  if (pos >= static_cast<int>(myStream.length())) {
+    return Token(TOKENTYPE::End); //TODO return an end Token
+  }
+  switch (myStream[pos]) {
+    case '0':
+    case '1':
+    case '2':
+    case '3':
+    case '4':
+    case '5':
+    case '6':
+    case '7':
+    case '8':
+    case '9':
+      return Token(TOKENTYPE::Integer, &myStream, pos, 1);
+      break;
+    case '+':
+      return Token(TOKENTYPE::PLUS, &myStream, pos, 1);
+    case '-':
+      return Token(TOKENTYPE::MINUS, &myStream, pos, 1);
+    case '*':
+      return Token(TOKENTYPE::MUL, &myStream, pos, 1);
+    case '/':
+      return Token(TOKENTYPE::DIV, &myStream, pos, 1);
+      break;
+    default :
+      cout << "unexpected input.";
   }
 }
 
@@ -46,6 +71,16 @@ Token::Token(TOKENTYPE tokenType, string *s, int begin, int length) {
   type = tokenType;
   value = s->substr(begin,length);
 }
+
+Token::Token(TOKENTYPE tokenType) {
+  type = tokenType;
+}
+
+TOKENTYPE Token::GetType() {
+  return type;
+}
+
+Token::Token() {}
 
 void Token::Print() {
   cout << "[" << type << "," << value << "]" << endl;

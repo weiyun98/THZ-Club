@@ -13,13 +13,16 @@ class Tokenizer{
   void SkipWhiteSpace();
   Token NextToken();
 };
-enum TOKENTYPE {Integer, OP};
+enum TOKENTYPE {Integer, PLUS, MINUS, MUL, DIV, End};
 class Token{
  private:
   TOKENTYPE type;
   std::string value;
  public:
   Token(TOKENTYPE tokenType, std::string *s, int begin, int length);
+  Token(TOKENTYPE tokenType);
+  Token();
+  TOKENTYPE GetType();
   void Print();
 };
 #endif
